@@ -19,7 +19,7 @@
 
 ## 安装部署
 
-- [下载解压 release 包](https://github.com/EasyDarwin/EasyDarwin/releases)
+- [下载解压 release 包](https://github.com/howwant/EasyDarwinMysql/releases/download/8.2.1/release.zip)
 
 - 配置upareserver.ini中的mysql信息
 
