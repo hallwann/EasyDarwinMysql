@@ -1,0 +1,66 @@
+{
+  "name": "UPAREserver",
+  "version": "8.2.0",
+  "description": "Upare Media Server",
+  "main": "index.js",
+  "scripts": {
+    "build:ico": "rsrc -arch amd64 -ico ico.ico -o UPAREserver_windows.syso",
+    "build:www": "cd web_src && npm run build && cd .. && apidoc -i routers -o www/apidoc",
+    "build:doc": "apidoc -i routers -o www/apidoc",
+    "build:win": "go build -tags release -ldflags \"-s -w\" -o UPAREserver.exe",
+    "build:lin": "go build -tags release -ldflags \"-X 'main.buildDateTime=$(date '+%Y-%m-%d %H:%M:%S')'  -s -w\" -o UPAREserver",
+    "build:dev": "go build -o UPAREserver.exe",
+    "dev": "go build -o UPAREserver.exe",
+    "dev:lin": "go build -o upareserver",
+    "dev:www": "cd web_src && npm run start",
+    "clean": "rimraf UPAREserver.exe UPAREserver.exe~ UPAREserver"
+  },
+  "apidoc": {
+    "name": "UPAREserver-api",
+    "title": "UPAREserver API Reference",
+    "order": [
+      "stats",
+      "Pushers",
+      "Players",
+      "stream",
+      "StreamStart",
+      "StreamStop",
+      "record",
+      "RecordFolders",
+      "RecordFiles",
+      "sys",
+      "Login",
+      "Logout",
+      "GetUserInfo",
+      "ModifyPassword",
+      "GetServerInfo"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "pack": [
+    {
+      "name": "UPAREserver-windows",
+      "format": "zip",
+      "pattern": "{www/**,UPAREserver.exe,ServiceInstall-UPAREserver.exe,ServiceUninstall-UPAREserver.exe,UPAREserver.ini}",
+      "options": {
+        "dot": true,
+        "ignore": [
+          "*.log"
+        ]
+      }
+    },
+    {
+      "name": "UPAREserver-linux",
+      "format": "tar",
+      "pattern": "{www/**,UPAREserver,UPAREserver.ini,*.sh}",
+      "options": {
+        "dot": true,
+        "ignore": [
+          "*.log"
+        ]
+      }
+    }
+  ]
+}
