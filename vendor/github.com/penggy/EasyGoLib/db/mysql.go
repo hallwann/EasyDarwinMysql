@@ -16,7 +16,7 @@ func Init() (err error){
     password  := utils.Conf().Section("mysql").Key("password").MustString("root")
     ipAddrees := utils.Conf().Section("mysql").Key("server").MustString("127.0.0.1")
     port      := utils.Conf().Section("mysql").Key("port").MustInt(3306)
-    dbName    := utils.Conf().Section("mysql").Key("dbname").MustString("howwant")
+    dbName    := utils.Conf().Section("mysql").Key("dbname").MustString("dbname")
     charset   := utils.Conf().Section("mysql").Key("charset").MustString("utf8")
 	
 	gorm.DefaultTableNameHandler = func(db *gorm.DB, defaultTablename string) string {
