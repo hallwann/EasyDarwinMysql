@@ -3,7 +3,7 @@
 
 ## 主要功能特点
 
-- 基于Golang和[EasyDarwin](https://github.com/EasyDarwin/EasyDarwin/releases)开发维护；
+- 基于Golang开发维护，是[EasyDarwin](https://github.com/EasyDarwin/EasyDarwin/releases)的集成版；
 - 支持Windows、Linux、macOS平台；
 - 支持RTSP推流分发（推模式转发）；
 - 支持RTSP拉流分发（拉模式转发）；
@@ -39,17 +39,15 @@
 
 - 直接运行(Linux/macOS)
 
-  	cd EasyDarwin
   	chmod +x UPAREserver 
   	./UPAREserver
   	# Ctrl + C
-
+  
 - 以服务启动(Linux/macOS)
 
-		cd EasyDarwin
 		./start.sh
 		# ./stop.sh
-
+	
 - 查看界面
 	
 	打开浏览器输入 [http://localhost:10008](http://localhost:10008), 进入控制页面,默认用户名密码是admin/admin
