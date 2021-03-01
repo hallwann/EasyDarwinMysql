@@ -112,7 +112,7 @@ func Init() (err error) {
 	Router.Use(cors.Default())
 
 	store := sessions.NewGormStoreWithOptions(db.MYSQL, sessions.GormStoreOptions{
-		TableName: "t_sessions",
+		TableName: "hw_live_sessions",
 	}, []byte("EasyDarwin@2018"))
 	tokenTimeout := utils.Conf().Section("http").Key("token_timeout").MustInt(7 * 86400)
 	store.Options(sessions.Options{HttpOnly: true, MaxAge: tokenTimeout, Path: "/"})
